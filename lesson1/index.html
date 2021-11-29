@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // for(var i = 0; i<10;i++){
+      //   console.log('i = '+i);
+      //   for(var j = 0 ;j <10 ;j++){
+      //     console.log('j = '+j);
+      //     if(j == 2) break;
+      //   }
+      // }
+
+      // a = 123
+      // console.log('a = '+a)
+
+      function Person() {}
+      Person.prototype.a = 'thomas'
+      Object.prototype.b = 'wang'
+      function MyClass() {}
+      var mc = new Person()
+      var mc2 = new Person()
+      var mc3 = new Person()
+      // console.log(mc.__proto__ == Person.prototype)
+      // console.log(mc2.__proto__ == Person.prototype)
+      // console.log(mc3.__proto__.__proto__ == Object.prototype)
+
+      // mc.__proto__.__proto__ = null
+      // console.log(mc.a, mc2.a, mc3.b, mc.b)
+
+      // const reg = new RegExp('a', 'i')
+      var reg = /a/i
+
+      console.log('reg', reg.test('a'))
+
+      var str = '1a2b3c4d5e6f7g8H'
+      var result = str.split(/[A-z]/)
+      console.info('result', result)
+      result = str.match(/[A-z]/gi)
+      console.info('result', result)
+      str = 'abdagsha'
+      reg = /^a.*a$/
+      console.info('result', reg.test(str))
+      str = '13345678901'
+      reg = /^1[3-9][0-9]{9}$/
+      console.info('result', reg.test(str))
+      str = '   13345678901   '
+      reg = /^\s*|\s*$/g
+      console.info('result', str.replace(reg, ''), 'jajaj')
+
+      window.onload = function () {
+        var boxSwip = document.getElementById('boxSwip')
+        var parent1 = document.getElementById('parent1')
+        parent1.onmousemove = function (event) {
+          var left = event.clientX
+          var top = event.clientY
+          boxSwip.style.left = left +'px';
+          boxSwip.style.top = top +'px';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <a href="javascript:alert('点你大爷');">来点我啊</a>
+    <div id="parent1" class="parent">
+      <div id="boxSwip" class="box-swip"></div>
+    </div>
+  </body>
+</html>

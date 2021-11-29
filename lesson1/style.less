@@ -1,0 +1,28 @@
+@a:100px;
+@b:red;
+
+body{
+  background-color: slategray;
+
+}
+.box1{
+  background-color: @b;
+  width: @a;
+  height: $width;
+  padding: 10px;
+
+}
+.box2:extend(.box1){
+  background-color: green;
+}
+.parent{
+  height: 500px;
+  position: relative;
+  background-color: yellowgreen;
+  .box-swip{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    position: absolute;
+  }
+}

@@ -1,0 +1,45 @@
+@import './triangle.less';
+@import './juzhong-extend.less';
+@width: 200px;
+@innerW: 100px;
+
+.juzhong(@w:20px,@h:20px,@c:yellow,@o:0.7) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: @w;
+  height: @h;
+  background-color: @c;
+  &:hover {
+    opacity: @o;
+  }
+}
+
+
+.container {
+  position: relative;
+  background-color: pink;
+  width: @width;
+  height: @width;
+  text-align: center;
+  
+  .inner1 {
+
+    &:extend(.juzhong);
+    .juzhong(150px,150px,blue,0.6);
+  }
+  .inner2 {
+    // .juzhong(@innerW,@innerW,red,0.3);
+    // &:extend(.juzhong);
+    &:extend(.juzhong);
+    .juzhong(@c:green);
+  }
+
+  
+}
+.sjx {
+  .triangle(T,40px);
+}
